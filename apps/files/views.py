@@ -1,4 +1,5 @@
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import redirect
 
 from apps.files.models import Files, FileTypes
@@ -17,6 +18,7 @@ def size_format(b):
         return '%.1f' % float(b / 1000000000000) + ' TB'
 
 
+@login_required
 def file_upload(request):
     if request.method == "POST":
         if request.FILES["file_name"]:

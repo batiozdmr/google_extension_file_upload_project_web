@@ -18,6 +18,7 @@ from apps.mainpage.views import *
 urlpatterns = i18n_patterns(
     path('super/user/admin/', admin.site.urls),
     path('', include(('apps.mainpage.urls'), namespace='mainpage')),
+    path('accounts/', include("allauth.urls")),
     path('files/', include(('apps.files.urls'), namespace='files')),
 
 

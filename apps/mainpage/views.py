@@ -6,7 +6,7 @@ from apps.files.models import Files, TopFileTypes
 
 @login_required
 def index(request):
-    files = Files.objects.filter()
+    files = Files.objects.filter(user=request.user)
     file_types = TopFileTypes.objects.filter()
     context = {
         'files': files,

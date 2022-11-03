@@ -1,5 +1,6 @@
 from decimal import Decimal
 
+from django.contrib.auth.models import AbstractUser, User, Group
 from django.db import models
 from django.utils.text import slugify
 from django.utils.translation import gettext_lazy as _
@@ -69,6 +70,8 @@ class FileTypes(OneTextField):
 
 
 class Files(OneTextField):
+    user = models.ForeignKey(User, on_delete=models.PROTECT, blank=True, null=True, related_name="files_user",
+                             verbose_name=_('Kullanıcı'))
     slug = models.SlugField(unique=True, max_length=255, null=True, editable=False, verbose_name=_('Slug'))
     file = models.ImageField(upload_to=userDirectoryPath, null=True, blank=True,
                              verbose_name=_('Dosya'))

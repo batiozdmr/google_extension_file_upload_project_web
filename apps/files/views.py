@@ -36,6 +36,7 @@ def file_upload(request):
 
             files_create = Files.objects.create(
                 text=file_text,
+                user=request.user,
                 file=file_input,
                 type=file_type,
                 size=file_size_custom,

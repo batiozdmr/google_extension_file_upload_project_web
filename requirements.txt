@@ -9,7 +9,7 @@ click==8.0.4
 Collectfast==2.2.0
 colorama==0.4.4
 defusedxml==0.7.1
-Django==3.2.7
+Django==3.0.8
 django-allauth==0.46.0
 django-autoslug==1.9.8
 django-ckeditor==6.2.0
@@ -58,4 +58,3 @@ botocore~=1.24.46
 setuptools~=60.2.0
 geoip2~=4.6.0
 user-agents==2.2.0
-channels==3.0.3

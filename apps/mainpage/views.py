@@ -1,8 +1,10 @@
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
 
 from apps.files.models import Files, TopFileTypes
 
 
+@login_required
 def index(request):
     files = Files.objects.filter()
     file_types = TopFileTypes.objects.filter()

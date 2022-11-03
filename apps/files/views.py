@@ -1,8 +1,9 @@
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import redirect
+from django.shortcuts import render
 
-from apps.files.models import Files, FileTypes
+from apps.files.models import Files, FileTypes, TopFileTypes
 
 
 def size_format(b):
@@ -53,3 +54,22 @@ def file_upload(request):
     else:
         messages.warning(request, "Beklenmedik Bir Hata Oluştu Hata Kodu:3")
         return redirect('mainpage:index')
+
+
+def get_file_upload(request):
+    data = "Başarılı"
+    context = {
+        'data': data,
+    }
+    return render(request, "apps/api/data.html", context)
+
+
+def files_api(request):
+    session_email = request.GET.get('session_email')
+    files = Files.objects.filter(user__email=session_email)
+    file_types = TopFileTypes.objects.filter()
+    context = {
+        'files': files,
+        'file_types': file_types,
+    }
+    return render(request, "apps/files/get_file_api.html", context)

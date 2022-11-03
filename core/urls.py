@@ -20,6 +20,7 @@ urlpatterns = i18n_patterns(
     path('', include(('apps.mainpage.urls'), namespace='mainpage')),
     path('accounts/', include("allauth.urls")),
     path('files/', include(('apps.files.urls'), namespace='files')),
+    path('api/', include(('apps.api.urls'), namespace='api')),
 
 
     path('parameter/', include("apps.parameter.urls")),

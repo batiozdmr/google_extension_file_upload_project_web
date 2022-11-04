@@ -54,10 +54,10 @@ THIRD_PARTY_APPS = [
 ]
 
 LOCAL_APPS = [
-    'google_extension_file_upload_project_web_1.apps.parameter',
-    'google_extension_file_upload_project_web_1.apps.mainpage',
-    'google_extension_file_upload_project_web_1.apps.files',
-    'google_extension_file_upload_project_web_1.apps.api',
+    'apps.parameter',
+    'apps.mainpage',
+    'apps.files',
+    'apps.api',
 ]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS

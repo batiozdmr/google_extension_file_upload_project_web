@@ -22,7 +22,7 @@ urlpatterns = i18n_patterns(
     path('api/', include(('apps.api.urls'), namespace='api')),
 
 
-    path('parameter/', include("google_extension_file_upload_project_web_1.apps.parameter.urls")),
+    path('parameter/', include("apps.parameter.urls")),
     path('rosetta/lang/trans/', include('rosetta.urls')),
     path('ckeditor-secret/', include('ckeditor_uploader.urls')),
 

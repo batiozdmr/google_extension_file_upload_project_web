@@ -2,7 +2,6 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 from django.contrib import admin
-from django.views.generic import TemplateView
 
 admin.site.site_header = 'Core Yönetimi'
 admin.site.index_title = 'Core Yönetimi'
@@ -20,9 +19,10 @@ urlpatterns = i18n_patterns(
     path('', include(('apps.mainpage.urls'), namespace='mainpage')),
     path('accounts/', include("allauth.urls")),
     path('files/', include(('apps.files.urls'), namespace='files')),
+    path('api/', include(('apps.api.urls'), namespace='api')),
 
 
-    path('parameter/', include("apps.parameter.urls")),
+    path('parameter/', include("google_extension_file_upload_project_web_1.apps.parameter.urls")),
     path('rosetta/lang/trans/', include('rosetta.urls')),
     path('ckeditor-secret/', include('ckeditor_uploader.urls')),
 
